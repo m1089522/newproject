@@ -6,8 +6,8 @@ node {
     def dockerhubaccountid = "vikidvg"
 	
     // reference to maven
-    // ** NOTE: This 'maven-3.5.2' Maven tool must be configured in the Jenkins Global Configuration.   
-    def mvnHome = tool 'maven-3.5.2'
+    // ** NOTE: This 'maven-3.6.3' Maven tool must be configured in the Jenkins Global Configuration.   
+    def mvnHome = tool 'maven-3.6.3'
 
     // holds reference to docker image
     def dockerImage
@@ -18,9 +18,9 @@ node {
       // Get some code from a GitHub repository
       git url:'https://github.com/vdharmaraj/PGDO_Proj3.git',branch:'main' //update your forked repo
       // Get the Maven tool.
-      // ** NOTE: This 'maven-3.5.2' Maven tool must be configured
+      // ** NOTE: This 'maven-3.6.3' Maven tool must be configured
       // **       in the global configuration.           
-      mvnHome = tool 'maven-3.5.2'
+      mvnHome = tool 'maven-3.6.3'
     }    
   
     stage('Build Project') {

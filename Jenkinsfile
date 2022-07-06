@@ -13,6 +13,15 @@ node {
     def dockerImage
  
     def dockerImageTag = "${dockerhubaccountid}/${application}:${env.BUILD_NUMBER}"
+    
+    stage('Clone Repo') { 
+      // Get some code from a GitHub repository
+      git url:'https://github.com/m1089522/newproject.git',branch:'main' //update your forked repo
+      // Get the Maven tool.
+      // ** NOTE: This 'maven-3.6.3' Maven tool must be configured
+      // **       in the global configuration.           
+      mvnHome = tool 'local_maven'
+    }    
   
     stage('Build Project') {
       // build project via maven

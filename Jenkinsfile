@@ -1,6 +1,6 @@
 pipeline {
   environment {
-    registry = "m1089522/newproject"
+    registry = "1081081243/simplilearn-devops-certification"
     registryCredential = 'dockerhub'
   }
   agent any

@@ -1,6 +1,6 @@
 pipeline {
   environment {
-    registry = "1081081243/simplilearn-devops-certification"
+    registry = "1081081243/project001"
     registryCredential = 'dockerhub'
   }
   agent any
@@ -34,7 +34,7 @@ pipeline {
 
 node {
     stage('Execute Image'){
-        def customImage = docker.build("1081081243/simplilearn-devops-certification:${env.BUILD_NUMBER}")
+        def customImage = docker.build("1081081243/project001:${env.BUILD_NUMBER}")
         customImage.inside {
             sh 'echo Hello'
         }
